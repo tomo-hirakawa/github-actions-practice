@@ -1,0 +1,33 @@
+name: Deliverable
+on: push
+
+jobs:
+  sample:
+    runs-on: macos-10.15
+    steps:
+
+      # textファイルを作成
+      - name: Generate TXT
+
+        # パイプ`|`を利用することで複数行に渡って書くことができる
+        run: |
+          # convertコマンドのインストール
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+          brew install imagemagick
+
+          # 画像の作成
+          convert -size 100x100 xc:red ./sample.png
+
+      # 成果物をGitHub上にアップロードするアクションを利用
+      - name: Upload TXT
+        uses: actions/upload-artifact@v1
+
+        # 成果物の設定
+        with:
+
+          # アップロード後の名称（ {{名称}}.zip でアップロードされる ）
+          name: sample
+
+          # アップロードするファイル or ディレクトリ名
+          path: ./sample.png
+
