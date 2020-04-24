@@ -11,8 +11,12 @@ jobs:
 
         # パイプ`|`を利用することで複数行に渡って書くことができる
         run: |
-          touch sample.txt
-          echo "Sample" >> sample.txt
+          # convertコマンドのインストール
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+          brew install imagemagick
+
+          # 画像の作成
+          convert -size 100x100 xc:red ./sample.png
 
       # 成果物をGitHub上にアップロードするアクションを利用
       - name: Upload TXT
@@ -26,3 +30,4 @@ jobs:
 
           # アップロードするファイル or ディレクトリ名
           path: ./sample.txt
+
