@@ -29,5 +29,5 @@ jobs:
           name: sample
 
           # アップロードするファイル or ディレクトリ名
-          path: ./sample.txt
+          path: ./sample.png
 
