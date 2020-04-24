@@ -15,7 +15,10 @@ jobs:
 
     # 実行する処理やコマンドの指定
     steps:
+      # リポジトリからファイルを取得するアクションを利用
+      - uses: actions/checkout@v1
 
       # Hello World!を表示
       - name: Sample
-        run: echo Hello, World!
+#        run: echo Hello, World!
+        run: bash ./print_hello.sh
