@@ -1,10 +1,6 @@
 name: automatic release
-on:
-  push:
-    branches:
-      - master
-    tags:
-      - "!*"
+on: push
+
 jobs:
   release:
     name: check version, add tag and release
