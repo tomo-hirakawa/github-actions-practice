@@ -1,0 +1,21 @@
+# Workflow名
+name: Sample
+
+# 実行するタイミング
+on: push
+
+# 実行するタイミング
+jobs:
+
+  # 実行する処理の名前
+  sample:
+
+    # 実行する環境
+    runs-on: macos-10.15
+
+    # 実行する処理やコマンドの指定
+    steps:
+
+      # Hello World!を表示
+      - name: Sample
+        run: echo Hello, World!
