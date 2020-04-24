@@ -14,7 +14,7 @@ jobs:
         with:
           ruby-version: 2.6.x
       - name: Test with Rspec
-        run:
+        run: |
           gem install bundler
-          bundle install --path vendor/bundle -- quiet  --jobs 4 --retry 3
+          bundle install --path vendor/bundle --jobs 4 --retry 3
           bundle exec rspec
